@@ -1,1 +1,33 @@
-# meal-calorie-frontend-Harshith.
+# Meal Calorie Backend (FastAPI)
+
+## Quick start (local, SQLite)
+1. Create virtualenv and activate:
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Copy .env.example to .env and fill USDA_API_KEY and JWT_SECRET
+   ```bash
+   cp .env.example .env
+   ```
+4. Run the app:
+   ```bash
+   uvicorn app.main:app --reload --port 8000
+   ```
+5. Open Swagger: http://localhost:8000/docs
+
+## Run tests
+```bash
+pytest -q
+```
+
+## Docker (optional)
+Build and run:
+```bash
+docker build -t meal-backend .
+docker run -p 8000:8000 --env-file .env meal-backend
+```
